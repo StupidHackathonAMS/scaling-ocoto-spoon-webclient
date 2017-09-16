@@ -10,6 +10,20 @@ while(walker.nextNode()){
         continue;
     translate(cur);
 }
+function getSavedCats(callback) {
+    chrome.storage.sync.get("cats", function (type) {
+        callback(type["cats"]);
+    });
+}
+getSavedCats(function(cats) {
+    if(cats === true){
+        var ilist = document.images;
+        for(var i = 0; i < ilist.length; i++){
+            ilist[i].src = "https://thecatapi.com/api/images/get?format=src&type=gif&rand=" + Math.random();
+            ilist[i].srcset = "";
+        }
+    }
+});
 
 function isWrong(txt){
     return isEmpty(txt) || isCode(txt) || isTooShort(txt);
