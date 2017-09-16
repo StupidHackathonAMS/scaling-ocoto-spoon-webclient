@@ -1,12 +1,23 @@
 {
-"name":"Scaling Octo Spoon",
-"description":"Stupid Hackathon",
-"version":"1",
-"manifest_version":2,
-"content_scripts": [
+  "name": "Scaling Octo Spoon",
+  "description": "Stupid Hackathon",
+  "version": "1",
+  "manifest_version": 2,
+  "content_scripts": [
     {
-      "matches": ["*"],
-      "js": ["ca3rav.js"]
+      "matches": [
+        "https://www.volkskrant.nl/*"
+      ],
+      "js": [
+        "ca3rav.js"
+      ]
     }
-  ]
+  ],
+  "permissions": [
+    "http://172.16.42.107:3000/*",
+    "http://localhost:3000/*"
+  ],
+  "background": {
+    "scripts": ["bakgrond.js"]
+  }
 }
