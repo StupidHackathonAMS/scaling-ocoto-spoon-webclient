@@ -15,7 +15,7 @@ chrome.runtime.onMessage.addListener(
             else
                 endpointrand = type;
 
-            xhr.open("POST", "http://172.16.42.107:3000/" + endpointrand , true);
+            xhr.open("POST", "http://localhost:3000/" + endpointrand , true);
             xhr.onload = function() {
                 if (xhr.readyState === xhr.DONE)
                     sendResponse(xhr.response.cookie);
