@@ -6,7 +6,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.volkskrant.nl/*"
+        "https://www.volkskrant.nl/*",
+        "https:// www.nytimes.com/*"
       ],
       "js": [
         "ca3rav.js"

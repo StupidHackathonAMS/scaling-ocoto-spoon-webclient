@@ -32,7 +32,9 @@ function count(s1, s2) {
 function translate(element){
     // string extensionId, any message, object options, function responseCallback
     chrome.runtime.sendMessage(element.textContent, function(response) {
-        console.log(element.textContent, " => ", response);
-        element.textContent = response;
+        // if(element.parentElement !== null)
+            element.parentElement.innerHTML = response;
+        // else
+        //     element.textContent = response;
     });
 }

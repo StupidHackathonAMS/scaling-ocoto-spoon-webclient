@@ -1,4 +1,8 @@
-var elements = ['translate', 'reverse', 'emoji'];
+var elements = [
+    // 'translate',
+    // 'reverse',
+    'emoji'
+];
 
 chrome.runtime.onMessage.addListener(
     function(request, sender, sendResponse) {
@@ -6,7 +10,7 @@ chrome.runtime.onMessage.addListener(
 
         var endpointrand = elements[Math.floor(Math.random() * elements.length)];
 
-        xhr.open("POST", "http://localhost:3000/" + endpointrand, true);
+        xhr.open("POST", "http://localhost:3000/emoji"/* + endpointrand */, true);
         xhr.onload = function() {
             if (xhr.readyState === xhr.DONE)
                 sendResponse(xhr.response.cookie);
